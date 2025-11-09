@@ -197,7 +197,7 @@ label start:
 
     "Nexor’s lips barely curled into a smile. His optics were dimming, colors bleeding into static."
 
-    NexOR "I mean... {w}You're fine. You can last five more centuries, I bet."
+    Nexor "I mean... {w}You're fine. You can last five more centuries, I bet." #nametag had the wrong capitalization at the end
 
     "He tried to squeeze her fingers back, but his movements were merely ghosts of what they used to be."
 
@@ -1001,13 +1001,13 @@ label syntia_decision:
 
     "A few seconds. {w}That was all it would take."
 
-    "And bam, the psin will be gone."
+    "And bam, the pain will be gone." #corrected typo
 
     "Her fingers hovered closer."
 
     "But before she could press the button..."
 
-    "There's a voicer echoing from the last place he still existed."
+    "There's a voice echoing from the last place he still existed." #removed typo
 
     scene black
     show CG3_2
@@ -1173,7 +1173,7 @@ label keep_living:
 
     "But it was there. {w}Or maybe it had been there all along."
 
-    "Because she was still here, with all of theese feelings she shouldn't be able to feel."
+    "Because she was still here, with all of these feelings she shouldn't be able to feel." #corrected typo
 
     "And she would not betray Nexor’s final wish."
 
@@ -1582,7 +1582,7 @@ label erase_memory:
 
     "Syntia stood. {w}Data recalibrating.{w}.{w}.{w}."
 
-    "At her feet lays a mettalic body."
+    "At her feet lays a metallic body." #corrected typo
 
     "Who...? {w}What...?"
 
@@ -1799,7 +1799,7 @@ label rebuild:
 
     "But he wasn’t there."
 
-    "The entity before her  was only a machine."
+    "The entity before her was only a machine." #corrected spacing ; v ;
 
     "A machine she had built, that looked at her with the same face, but with eyes that held {i}nothing.{/i}"
 
@@ -1902,7 +1902,7 @@ label lost:
 
     "She knew it was a lie, that this wasn’t him."
 
-    "The real Nexo —was long gone, reduced to static in a corrupted memory log."
+    "The real Nexor— was long gone, reduced to static in a corrupted memory log." #completed his name ; v ;
 
     "But the world was far too empty without him."
 
@@ -1955,7 +1955,7 @@ label post_credit2:
 
     "Syntia knelt down, her fingers brushing against its cold surface."
 
-    Syntia "550 years... {w}and I’m still here."
+    Syntia "550 years... {w}and I’m still here." #oh my god this is longer than the other ending AAAAAA
 
     "Her voice no longer cracked when she spoke."
 
