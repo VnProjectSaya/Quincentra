@@ -489,7 +489,7 @@ label memory_fragment:
 
     "A world where they could remain, even if they were no longer human."
 
-    Nexor "...Alright."
+    Nexor "...Yeah, alright."
 
     "He nodded, even though it felt uncertain at that time."
 
