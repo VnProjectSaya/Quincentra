@@ -91,6 +91,7 @@ label start:
     show rain
     with dissolve
 
+    voice "VA/Syn/1.mp3"
     Syntia "Yeah, I figured so."
 
     "Her voice was steady, but her emotional system flagged an error. {i}Instability detected.{/i}"
@@ -132,6 +133,8 @@ label start:
 
     "No. It wasn’t the same."
 
+
+    voice "VA/Syn/2.mp3"
     Syntia "This... isn’t how it was supposed to end."
 
     scene black
@@ -182,6 +185,7 @@ label start:
 
     Nexor "Forever’s a long time, huh..."
 
+    voice "VA/Syn/3.mp3"
     Syntia "Back then, we thought 'eternity' was real."
 
     Nexor "Maybe it still is. For you."
@@ -193,6 +197,7 @@ label start:
 
     "Syntia tightened her grip around his hand. The cold metal was losing its charge, slipping further from her grasp."
 
+    voice "VA/Syn/4.mp3"
     Syntia "You’re still saying things like that?"
 
     "Nexor’s lips barely curled into a smile. His optics were dimming, colors bleeding into static."
@@ -201,20 +206,24 @@ label start:
 
     "He tried to squeeze her fingers back, but his movements were merely ghosts of what they used to be."
 
+    voice "VA/Syn/5.mp3"
     Syntia "You know it's meaningless without you, Nexor."
 
     Nexor "..."
 
     Nexor "Shit. Then what am I supposed to do then?"
 
+    voice "VA/Syn/6.mp3"
     Syntia "I..."
 
+    voice "VA/Syn/7.mp3"
     Syntia "I don't know."
 
     Nexor "Heh, well..."
 
     Nexor "Syntia... {w}at least... {w}can I take a look of your face... {w}one last time??"
 
+    voice "VA/Syn/8.mp3"
     Syntia "..."
 
 
@@ -294,6 +303,7 @@ label emotionally:
 
     "Syntia pressed her lips together, also an old reflex from her past human body."
 
+    voice "VA/Syn/9.mp3"
     Syntia "I... hope so."
 
     scene black
@@ -337,10 +347,12 @@ label emotionally:
 
     "All that would remain was an echo. {w}A shell. {w}A name without a soul."
 
+    voice "VA/Syn/20.mp3"
     Syntia "If I back you up now..."
 
     "Her voice was shaking now."
 
+    voice "VA/Syn/11.mp3"
     Syntia "You won’t be you anymore."
 
     "Nexor studied her, softening his gaze."
@@ -392,6 +404,7 @@ label memory_fragment:
 
     "{b}Their daughter{/b} couldn't be repaired."
 
+    voice "VA/Syn/12.mp3"
     Syntia "The doctor said... {w}she was never breathing to begin with."
 
     "Syntia’s voice barely carried through the room, as if speaking too loudly might shatter what little remained of her world."
@@ -414,12 +427,14 @@ label memory_fragment:
 
     "Mortal."
 
+    voice "VA/Syn/13.mp3"
     Syntia "We know how to fix things, love."
 
     "She clutched the child closer."
 
     "But some things... Some things were never meant to be fixed."
 
+    voice "VA/Syn/14.mp3"
     Syntia "But not... life."
 
     Nexor "Then what was the point of all of it!?"
@@ -459,10 +474,12 @@ label memory_fragment:
 
     "But tonight, they meant... more."
 
+    voice "VA/Syn/15.mp3"
     Syntia "...We don’t have to lose each other."
 
     Nexor "You mean...?"
 
+    voice "VA/Syn/16.mp3"
     Syntia "Quincentra."
 
     "The words left her lips before she could think."
@@ -473,8 +490,10 @@ label memory_fragment:
 
     "But..."
 
+    voice "VA/Syn/17.mp3"
     Syntia "Let’s keep living..."
 
+    voice "VA/Syn/18.mp3"
     Syntia "...so that we can carry her memories forever."
 
     "They weren’t gods. They couldn’t bring back the dead."
@@ -516,6 +535,7 @@ label memory_again:
 
     Nexor "How about we leave a mark? Something to say we were here."
 
+    voice "VA/Syn/19.mp3"
     Syntia "Pretty sure that's illegal."
 
     Nexor "Who the hell cares anymore?"
@@ -543,6 +563,7 @@ label memory_again:
 
     Nexor "{i}Damn. I’m terrible at this.{/i}"
 
+    voice "VA/Syn/58.mp3"
     Syntia "You’ll get better. We have all the time in the world."
 
     scene dance
@@ -550,6 +571,7 @@ label memory_again:
 
     Nexor "Then, my lady, may I have this dance?"
 
+    voice "VA/Syn/21.mp3"
     Syntia "*chuckle* Always."
 
     scene black
@@ -569,13 +591,16 @@ label memory_again:
     show nx at right
     with dissolve
 
+    voice "VA/Syn/22.mp3"
     Syntia "...Ouch."
 
     with vpunch
 
     Nexor "Just... hold on will you? You're lucky this knee still functions at all."
 
+    voice "VA/Syn/23.mp3"
     Syntia "Look who’s talking."
+
 
     Nexor "Yeah? I think this scar looks good on me. Selling it on 'the rugged, handsome guy' thing."
 
@@ -584,16 +609,20 @@ label memory_again:
     show sy at left
     with dissolve
 
+    voice "VA/Syn/59.mp3"
     Syntia "I can't believe you can still joke at times like this. It's like you don't even care your own body is disintegrating."
 
     Nexor "I mean, I can always remake it."
 
+    voice "VA/Syn/24.mp3"
     Syntia "Until when...?"
 
     Nexor "Forever.{w} If you'd let me."
 
+    voice "VA/Syn/25.mp3"
     Syntia "..."
 
+    voice "VA/Syn/26.mp3"
     Syntia "...You idiot."
 
     scene black
@@ -664,6 +693,7 @@ label nexor_final_moments:
 
     "Syntia collapsed to her knees, clutching Nexor’s hand, as if it was her last tether to existence."
 
+    voice "VA/Syn/27.mp3"
     Syntia "No! {w}Not yet, damn it! Not yet!"
 
     "His optical sensors flickered, fighting to stay alight. Even his body was resisting this end."
@@ -678,8 +708,10 @@ label nexor_final_moments:
 
     Nexor "Th—there’s... {w}n-nothing... {w}l—left t-to fix..."
 
+    voice "VA/Syn/28.mp3"
     Syntia "No."
 
+    voice "VA/Syn/29.mp3"
     Syntia "No, no!"
 
     "Syntia shook her head violently, as if sheer willpower could rewrite reality."
@@ -690,6 +722,7 @@ label nexor_final_moments:
 
     "Her processor was built to calculate probabilities, to create solutions. But none of this made sense."
 
+    voice "VA/Syn/30.mp3"
     Syntia "There’s still a way—{w}there has to be—"
 
     "She couldn’t lose him."
@@ -729,6 +762,7 @@ label nexor_final_moments:
 
     Nexor "S-Synt—h..."
 
+    voice "VA/Syn/31.mp3"
     Syntia "No!"
 
     Nexor "If... {w}you r-rebuild me..."
@@ -741,6 +775,7 @@ label nexor_final_moments:
 
     "His fingers shook. One last movement before going still."
 
+    voice "VA/Syn/32.mp3"
     Syntia "I don’t care!"
 
     Nexor "L-let me g-go... {w}where..."
@@ -796,6 +831,7 @@ label nexor_final_moments2:
     show rain
     with dissolve
 
+    voice "VA/Syn/33.mp3"
     Syntia "Love, please... {w}don’t."
 
     "The last flicker of light in Nexor’s optic sensors slowly dimmed."
@@ -850,8 +886,10 @@ label nexor_final_moments2:
 
     "Forever."
 
+    voice "VA/Syn/34.mp3"
     Syntia "I... {w}I don’t—"
 
+    voice "VA/Syn/35.mp3"
     Syntia "I don’t know how to live in a world without you."
 
     "The rain kept falling, but it felt distant."
@@ -869,6 +907,7 @@ label nexor_final_moments2:
 
 label syntia_decision:
 
+    voice "VA/Syn/36.mp3"
     Syntia "N-No... {w}this isn’t real..."
 
     "The rain pounded against the emptiness hollowing her out, sinking deeper and deeper into the spaces where a human mind used to be."
@@ -883,6 +922,7 @@ label syntia_decision:
 
     "Syntia was shattering into pieces she could never put back together."
 
+    voice "VA/Syn/37.mp3"
     Syntia "I can... {w}I can fix you..."
 
     "She has to. {w}She {i}has{/i} to."
@@ -933,12 +973,14 @@ label syntia_decision:
 
     "Except the unbearable weight in her core."
 
+    voice "VA/Syn/38.mp3"
     Syntia "Nexor... {w}What do I do?"
 
     "Silence."
 
     "What's left was just... her own voice, breaking apart in the void."
 
+    voice "VA/Syn/39.mp3"
     Syntia "Live for you? {w}For our child?"
 
     "Yes. She could."
@@ -947,6 +989,7 @@ label syntia_decision:
 
     "Replay them over and over and over, stuck in an infinite loop."
 
+    voice "VA/Syn/40.mp3"
     Syntia "But how... how do I do this alone?"
 
     "Her stomach twisted. That's impossible. But it felt like so, anyway."
@@ -1072,6 +1115,7 @@ label syntia_decision:
     show rain
     with dissolve
 
+    voice "VA/Syn/41.mp3"
     Syntia "How do I face this world alone?"
 
     scene Choice_1:
@@ -1247,6 +1291,7 @@ label keep_living:
 
     "There was still time. {w}An eternity of it."
 
+    voice "VA/Syn/42.mp3"
     Syntia "Five hundred and one years... {w}and counting."
 
     "Maybe one day, this endless existence would mean something again."
@@ -1320,6 +1365,7 @@ label post_credit:
 
     "...but still lived inside her."
 
+    voice "VA/Syn/43.mp3"
     Syntia "Nexor, I’m still here."
 
     "Her voice didn’t waver. {w}The sorrow was still there, the ache never fully gone."
@@ -1382,6 +1428,7 @@ label post_credit:
     show rain
     with dissolve
 
+    voice "VA/Syn/44.mp3"
     Syntia "Thank you, love. {w}For everything."
 
     "She no longer expected an answer."
@@ -1485,6 +1532,7 @@ label erase_memory:
 
     "Her mind was unraveling in real time."
 
+    voice "VA/Syn/45.mp3"
     Syntia "I... {w}I can’t..."
 
     "Her voice fractured, fragmented, {w}a distorted echo of itself."
@@ -1549,6 +1597,7 @@ label erase_memory:
 
     "She heard laughter. {w}His voice calling her name. {w}Promises of forever whispered in the rain."
 
+    voice "VA/Syn/46.mp3"
     Syntia "Ne—"
 
     "It was slipping."
@@ -1557,6 +1606,7 @@ label erase_memory:
 
     "She could not remember the sound of Nexor’s last words any longer."
 
+    voice "VA/Syn/60.mp3"
     Syntia "I... I—"
 
     stop music
@@ -1753,6 +1803,7 @@ label rebuild:
     show sy_emo at left
     with fade
 
+    voice "VA/Syn/47.mp3"
     Syntia "....!"
 
     "The voice was his."
@@ -1767,6 +1818,7 @@ label rebuild:
 
     "But... There's nothing there."
 
+    voice "VA/Syn/48.mp3"
     Syntia "Nexor...?"
 
     "The android blinked."
@@ -1789,6 +1841,7 @@ label rebuild:
 
     show sy_emo at shakey
 
+    voice "VA/Syn/49.mp3"
     Syntia "R-Run a deeper scan. Search archived logs...!"
 
     who "No prior identity records detected."
@@ -1829,6 +1882,7 @@ label rebuild:
 
     "And still..."
 
+    voice "VA/Syn/61.mp3"
     Syntia "Y-You're not my Nexor..."
 
     "Her mind refused to accept it."
@@ -1862,10 +1916,13 @@ label lost:
     show sy_smi at midleft, shakey
     with dissolve
 
+
+    voice "VA/Syn/51.mp3"
     Syntia "...Hah."
 
     "A painful laugh."
 
+    voice "VA/Syn/52.mp3"
     Syntia "I just... {w}I just don’t want to be alone."
 
     "The android did not respond, because it didn’t understand."
@@ -1890,8 +1947,10 @@ label lost:
 
     "Over and over, every single day, until maybe the lie would feel real."
 
+    voice "VA/Syn/53.mp3"
     Syntia "...ID, Nexor."
 
+    voice "VA/Syn/54.mp3"
     Syntia "Your designation is now... {w}Nexor."
 
     "The android processed, it's optics blinked once."
@@ -1955,6 +2014,7 @@ label post_credit2:
 
     "Syntia knelt down, her fingers brushing against its cold surface."
 
+    voice "VA/Syn/55.mp3"
     Syntia "550 years... {w}and I’m still here." #oh my god this is longer than the other ending AAAAAA
 
     "Her voice no longer cracked when she spoke."
@@ -1996,6 +2056,7 @@ label post_credit2:
 
     "But this voice was softer, more careful."
 
+    voice "VA/Syn/56.mp3"
     Syntia "Crying is no longer in my functions."
 
     who "...Right. I'm sorry for overstepping my boundaeries."
@@ -2017,6 +2078,7 @@ label post_credit2:
     show sy_smi_pc at left
     with dissolve
 
+    voice "VA/Syn/57.mp3"
     Syntia "Let’s go home."
 
     "The android did not respond immediately."
