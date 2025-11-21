@@ -466,6 +466,9 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     if main_menu:
         add gui.main_menu_background
         add "MAINMENUDIM.PNG"
+    #if preferences:
+    #    add "gui/gui_fshift/bg_options.png"
+    
     else:
         add gui.game_menu_background
         add "neon_sky.jpg"
