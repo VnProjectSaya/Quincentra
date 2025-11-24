@@ -650,7 +650,7 @@ screen load():
 
     use file_slots(_("Load"))
 
-
+"""
 screen file_slots(title):
 
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
@@ -726,7 +726,7 @@ screen file_slots(title):
                     textbutton "[page]" action FilePage(page)
 
                 textbutton _(">") action FilePageNext()
-
+"""
 
 style page_label is gui_label
 style page_label_text is gui_label_text
@@ -769,6 +769,7 @@ style slot_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
+"""
 screen preferences():
 
     tag menu
@@ -856,7 +857,7 @@ screen preferences():
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
-
+"""
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
