@@ -22,7 +22,7 @@ screen preferences():
         xoffset 1200 yoffset 60 size 60 bold True
 
     text _("Display"):
-        xoffset 280 yoffset 180 size 50 bold True
+        xoffset 280 yoffset 200 size 50 bold True
     
     text _("Audio"):
         xoffset 280 yoffset 770 size 50 bold True
@@ -30,7 +30,7 @@ screen preferences():
     vbox:
         
         xoffset 330
-        yoffset 290
+        yoffset 300
         vbox:
             spacing 30
             box_wrap True
@@ -65,7 +65,7 @@ screen preferences():
             hbox:
 
                 xoffset 350
-                yoffset 20
+                yoffset 0
 
                 #box_wrap True
                 label _("Rollback Side")
@@ -164,16 +164,18 @@ screen preferences():
 screen file_slots(title):
 
     
-
+    
     default page_name_value = FilePageNameInputValue(pattern=_("Page {} of 5"))
+        
+        
 
     add "gui/gui_fshift/bg_slots.png" fit "cover"
 
     text (title):
-        xoffset 1130 yoffset 30 size 60 bold True
+        xoffset 1170 yoffset 70 size 60 bold True
     
-    text ("Preview"):
-        xoffset 1110 yoffset 280 size 60 bold True
+    #text ("Preview"):
+    #    xoffset 1110 yoffset 280 size 60 bold True
 
     use fshift_navigation_menu()
 
@@ -204,10 +206,10 @@ screen file_slots(title):
         vbox:
             #style_prefix "slot"
 
-            xalign 0.18
-            yalign 0.65
+            xalign 0.22
+            yalign 0.75
 
-            spacing -40
+            spacing -80
 
             for i in range(3):
                 vbox:
@@ -215,23 +217,26 @@ screen file_slots(title):
                     
                     $ slot = i + 1
 
-                    button:
+                    imagebutton:
+                        idle "gui/gui_fshift/save-load/slot_idle.png"
+                        hover "gui/gui_fshift/save-load/slot_hover.png"
+                        #selected_idle "gui/gui_fshift/save-load/slot_selected.png"
+                        at side
                         action FileAction(slot)
-                        has vbox
-                        add "gui/gui_fshift/save-load/slot.png"
+
                         
                         
 
-                        key "save_delete" action FileDelete(slot)
-                        vbox:
-                                yoffset -114
-                                xoffset 250
-                                text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                                    style "slot_time_text"
-                                    ypos 30
+                        #key "save_delete" action FileDelete(slot)
+                    vbox:
+                            yoffset -114
+                            xoffset 250
+                            text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                                style "slot_time_text"
+                                ypos 30
 
-                                text FileSaveName(slot):
-                                    style "slot_name_text"
+                            text FileSaveName(slot):
+                                style "slot_name_text"
         ## Buttons to access other pages.
         hbox:
             style_prefix "page"
@@ -268,8 +273,8 @@ screen fshift_navigation_menu():
     imagebutton:
         idle "gui/gui_fshift/button/back_idle.png"
         hover "gui/gui_fshift/button/back_hover.png"
-        xalign 0.85
-        yalign 0.93
+        xalign 0.86
+        yalign 0.97
         action Return()
         
     
