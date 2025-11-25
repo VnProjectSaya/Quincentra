@@ -21,13 +21,13 @@ screen preferences():
     use fshift_navigation_menu()
 
     text _("Options"):
-        xoffset 1200 yoffset 60 size 60 bold True
+        xoffset 1200 yoffset 60 size 60 
 
     text _("Display"):
-        xoffset 280 yoffset 200 size 50 bold True
+        xoffset 280 yoffset 200 size 50 
     
     text _("Audio"):
-        xoffset 280 yoffset 770 size 50 bold True
+        xoffset 280 yoffset 770 size 50 
 
     vbox:
         
@@ -174,12 +174,13 @@ screen file_slots(title):
     add "gui/gui_fshift/bg_slots.png" fit "cover"
 
     text (title):
-        xoffset 1170 yoffset 70 size 60 bold True
+        xoffset 1170 yoffset 70 size 60 
     
     #text ("Preview"):
-    #    xoffset 1110 yoffset 280 size 60 bold True
+    #    xoffset 1110 yoffset 280 size 60 
 
     use fshift_navigation_menu()
+    use save_preview()
 
     #use game_menu(title):
 
@@ -223,6 +224,13 @@ screen file_slots(title):
                         idle "gui/gui_fshift/save-load/slot_idle.png"
                         hover "gui/gui_fshift/save-load/slot_hover.png"
                         #selected_idle "gui/gui_fshift/save-load/slot_selected.png"
+
+
+                        hovered [
+                            SetVariable("persistent._preview_slot", slot),
+                            Show("save_preview", transition= None)
+                        ]
+
                         at side
                         action FileAction(slot)
 
@@ -231,7 +239,7 @@ screen file_slots(title):
 
                         #key "save_delete" action FileDelete(slot)
                     vbox:
-                            yoffset -114
+                            yoffset -170
                             xoffset 250
                             text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
                                 style "slot_time_text"
@@ -266,7 +274,7 @@ screen file_slots(title):
                 yoffset -100
                 imagebutton:
                     idle "gui/gui_fshift/button/prev_page.png"
-                    action FilePagePrevious(auto = False, quick = False)
+                    action FilePagePrevious(quick = False)
                 ## range(1, 10) gives the numbers from 1 to 9.
                 textbutton ("[page]/5") action FilePage(page) 
 
@@ -276,7 +284,39 @@ screen file_slots(title):
                     action FilePageNext(5)
     
 ################################################
+##SCREEN OF PREVIEW
+screen save_preview():
 
+    #tag menu
+
+    
+
+    #use fshift_navigation_menu()
+
+    frame:
+        xalign 0.5
+        yalign 0.55
+        background None
+        add "gui/gui_fshift/save-load/preview_empty.png" 
+
+        vbox:
+            spacing 20
+
+            text _("Slot: [persistent._preview_slot]"):
+                size 40
+
+            text FileTime(persistent._preview_slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                size 30
+
+            text FileSaveName(persistent._preview_slot):
+                size 30
+
+            add FileScreenshot(persistent._preview_slot):
+                
+                zoom 1.2    
+
+
+###########
 screen fshift_navigation_menu():
 
     # This tag ensures only one instance of this screen is shown at a time.
