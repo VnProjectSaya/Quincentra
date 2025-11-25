@@ -1,43 +1,79 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-Exception: Expected transition to return a displayable, not a <partial <class 'renpy.display.transition.Dissolve'> () {'old_widget': <renpy.display.layout.Fixed object at 0x000000000cbdc950>, 'new_widget': <renpy.display.layout.Fixed object at 0x000000000cbdd340>}>
+  File "game/script.rpy", line 236, in script
+    Syntia "I don't know."
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 101, in execute
+    window:
+  File "game/screens.rpy", line 104, in execute
+    if who is not None:
+  File "game/screens.rpy", line 106, in execute
+    window:
+  File "game/screens.rpy", line 109, in execute
+    text who id "who" at chara
+  File "game/screens.rpy", line 109, in keywords
+    text who id "who" at chara
+  File "game/screens.rpy", line 109, in <module>
+    text who id "who" at chara
+                         ^^^^^
+NameError: name 'chara' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "renpy/common/00gamemenu.rpy", line 174, in script
-    $ ui.interact()
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/00gamemenu.rpy", line 174, in <module>
-    $ ui.interact()
-      ~~~~~~~~~~~^^
-  File "renpy/ui.py", line 304, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2219, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )  # type: ignore
-    ^                
-  File "renpy/display/core.py", line 2680, in interact_core
-    trans = instantiate_transition(None, old_root, layers_root)
-            ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2599, in instantiate_transition
-    raise Exception("Expected transition to return a displayable, not a {!r}".format(trans))
-Exception: Expected transition to return a displayable, not a <partial <class 'renpy.display.transition.Dissolve'> () {'old_widget': <renpy.display.layout.Fixed object at 0x000000000cbdc950>, 'new_widget': <renpy.display.layout.Fixed object at 0x000000000cbdd340>}>
+  File "game/script.rpy", line 236, in script
+    Syntia "I don't know."
+  File "renpy/ast.py", line 991, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1543, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1198, in do_display
+    display_say(who, what, self.do_show, **display_args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 820, in display_say
+    what_text = renpy.display.screen.get_widget(what_text[0], what_text[1], what_text[2])
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 1565, in get_displayable
+    screen.update()
+    ~~~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 98, in execute
+    screen say(who, what):
+  File "game/screens.rpy", line 101, in execute
+    window:
+  File "game/screens.rpy", line 104, in execute
+    if who is not None:
+  File "game/screens.rpy", line 106, in execute
+    window:
+  File "game/screens.rpy", line 109, in execute
+    text who id "who" at chara
+  File "game/screens.rpy", line 109, in keywords
+    text who id "who" at chara
+  File "renpy/python.py", line 1292, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1285, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 109, in <module>
+    text who id "who" at chara
+                         ^^^^^
+NameError: name 'chara' is not defined
 
-Windows-10-10.0.17763-SP0 AMD64
+Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.4.1.25072401
 QUINCENTRA_ENGLISH 1.0
-Tue Nov 25 14:45:20 2025
+Tue Nov 25 15:44:23 2025

@@ -106,7 +106,8 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                text who id "who" 
+                text who id "who"
+                
 
         text what id "what" at saybox
 
@@ -1236,12 +1237,13 @@ screen confirm(message, yes_action, no_action):
             label _(message):
                 style "confirm_prompt"
                 xalign 0.5
+                at saybox
 
             hbox:
                 xalign 0.5
                 spacing 150
 
-                textbutton _("Yes") action yes_action
+                textbutton _("Yes") action yes_action 
                 textbutton _("No") action no_action
 
     ## Right-click and escape answer "no".
