@@ -922,11 +922,15 @@ style radio_vbox:
     spacing gui.pref_button_spacing
 
 style radio_button:
+
+    padding (10, 0, 10, 0)
     properties gui.button_properties("radio_button")
     foreground "gui/button/radio_[prefix_]foreground.png"
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
+    xoffset 20
+    yoffset -10
 
 style check_vbox:
     spacing gui.pref_button_spacing

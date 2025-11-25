@@ -44,49 +44,59 @@ screen preferences():
                     label _("Window Mode")
                     
                     hbox:
-                        xoffset 150
-                        yoffset 10
+                        xoffset 85
+                        yoffset 20
                         spacing 80
 
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        textbutton _("Window") action Preference("display", "window"):
+                            text_size 30
+                            xoffset 20
+                            
+                        textbutton _("Fullscreen") action Preference("display", "fullscreen"):
+                            text_size 30
+                            xoffset 20
             
             hbox:
-                style_prefix "check"
+                style_prefix "radio"
                 label _("Skip Text")
                 
                 hbox:
-                    xoffset 200
-                    yoffset 20
+                    xoffset 170
+                    yoffset 25
                     spacing 55
 
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
+                    textbutton _("Unseen Text") action Preference("skip", "toggle"):
+                        text_size 30
+                        xoffset 20
+                    textbutton _("After Choices") action Preference("after choices", "toggle"):
+                        text_size 30
+                        xoffset 35
+                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle")):
+                        text_size 30
+                        xoffset 65
             hbox:
 
                 xoffset 350
-                yoffset 0
+                yoffset -10
 
                 #box_wrap True
                 label _("Rollback Side")
 
                 hbox:
-                    xoffset 100
-                    #yoffset 20
-                    spacing 60
+                    xoffset 70
+                    yoffset 5
+                    spacing 40
 
 
                     style_prefix "radio"
                     
                     textbutton _("Disable") action Preference("rollback side", "disable")
                     textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right"):
-                        xoffset 40
+                    textbutton _("Right") action Preference("rollback side", "right")
+                        #xoffset 40
 
             vbox:
-                yoffset -32
+                yoffset -75
                 style_prefix "slider"
 
                 label _("Text Speed")
@@ -109,10 +119,10 @@ screen preferences():
             box_wrap True
 
             xoffset 400
-            yoffset -25
+            yoffset -38
 
             vbox:
-                spacing 17
+                spacing 10
                 label _("Music")
                 label _("Sound")
                 label _("Voice")
@@ -120,7 +130,7 @@ screen preferences():
             
 
             vbox:
-                spacing 40
+                spacing 35
                 yoffset 18
                 xoffset -500
 
@@ -295,7 +305,7 @@ screen save_preview():
     #use fshift_navigation_menu()
 
     frame:
-        xpos 1100
+        xpos 1050
         ypos 400
 
         background None
@@ -318,7 +328,7 @@ screen details_preview():
         text _("Slot: [persistent._preview_slot]"):
             size 40
 
-        text FileTime(persistent._preview_slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+        text FileTime(persistent._preview_slot, format=_("%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
             xmaximum 400
             size 30
 
