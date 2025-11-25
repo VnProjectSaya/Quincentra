@@ -170,7 +170,7 @@ screen file_slots(title):
     default page_name_value = FilePageNameInputValue(pattern=_("Page {} of 5"))
         
         
-
+    use save_preview()
     add "gui/gui_fshift/bg_slots.png" fit "cover"
 
     text (title):
@@ -180,7 +180,7 @@ screen file_slots(title):
     #    xoffset 1110 yoffset 280 size 60 
 
     use fshift_navigation_menu()
-    use save_preview()
+    use details_preview()
 
     #use game_menu(title):
 
@@ -230,7 +230,7 @@ screen file_slots(title):
                             SetVariable("persistent._preview_slot", slot),
                             Show("save_preview", transition= None)
                         ]
-
+                        unhovered SetVariable("persistent._preview_slot", None)
                         at side
                         action FileAction(slot)
 
@@ -281,12 +281,13 @@ screen file_slots(title):
                 
                 imagebutton:
                     idle "gui/gui_fshift/button/next_page.png"
-                    action FilePageNext(5)
+                    action FilePageNext(5, quick = False)
     
 ################################################
 ##SCREEN OF PREVIEW
 screen save_preview():
-
+    zorder -1
+    
     #tag menu
 
     
@@ -294,26 +295,37 @@ screen save_preview():
     #use fshift_navigation_menu()
 
     frame:
-        xalign 0.5
-        yalign 0.55
+        xpos 1100
+        ypos 400
+
         background None
-        add "gui/gui_fshift/save-load/preview_empty.png" 
-
-        vbox:
-            spacing 20
-
-            text _("Slot: [persistent._preview_slot]"):
-                size 40
-
-            text FileTime(persistent._preview_slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                size 30
-
-            text FileSaveName(persistent._preview_slot):
-                size 30
-
+        if persistent._preview_slot == None:
+            add "gui/gui_fshift/save-load/preview_empty.png" 
+        else:
             add FileScreenshot(persistent._preview_slot):
+                zoom 1.5
+                    
+screen details_preview():                
+    vbox:
+        xpos 1100
+        ypos 400
+
+        yoffset 300
+        xoffset 50
+        
+        
+
+        text _("Slot: [persistent._preview_slot]"):
+            size 40
+
+        text FileTime(persistent._preview_slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+            xmaximum 400
+            size 30
+
+        text FileSaveName(persistent._preview_slot):
+            size 30
+
                 
-                zoom 1.2    
 
 
 ###########
