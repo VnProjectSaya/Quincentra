@@ -1,15 +1,18 @@
-"""
-init -2 python:
-    style.fshift_slider = Style(style.slider)
-    
-    style.fshift_slider.left_bar   = "gui/fshift/bar_fill.png"   # la parte que se llena (purple)
-    style.fshift_slider.right_bar  = "gui/fshift/bar_empty.png"  # la parte vacía
-    style.fshift_slider.xmaximum   = 600                         # ancho real de tus imágenes
-    style.fshift_slider.ymaximum   = 54                          # alto real de tus imágenes
-    style.fshift_slider.thumb      = None                        # sin thumb
-    style.fshift_slider.thumb_offset = 0
+style sound_bar:
+    xsize 455
+    ysize 32
+    left_bar "gui/gui_fshift/toggles/audio_fill.png"
+    right_bar "gui/gui_fshift/toggles/audio_empty.png"
+    #thumb "gui/custom_bar_thumb.png"
+    bar_invert False
 
-""" 
+style text_bar:
+    xsize 1142
+    ysize 44
+    left_bar "gui/gui_fshift/toggles/bar_fill.png"
+    right_bar "gui/gui_fshift/toggles/bar_empty.png"
+    #thumb "gui/custom_bar_thumb.png"
+    bar_invert False
 
 
 screen preferences():
@@ -27,7 +30,7 @@ screen preferences():
         xoffset 280 yoffset 200 size 50 
     
     text _("Audio"):
-        xoffset 280 yoffset 770 size 50 
+        xoffset 280 yoffset 780 size 50 
 
     vbox:
         
@@ -101,11 +104,15 @@ screen preferences():
 
                 label _("Text Speed")
 
-                bar value Preference("text speed")
+                bar:
+                    style "text_bar"
+                    value Preference("text speed")
 
                 label _("Auto-Forward Time")
 
-                bar value Preference("auto-forward time")
+                bar:
+                    style "text_bar"
+                    value Preference("auto-forward time")
             
 
         
@@ -114,60 +121,67 @@ screen preferences():
 
         #null height (4 * gui.pref_spacing)
 
-        hbox:
-            style_prefix "slider"
-            box_wrap True
+    hbox:
+        style_prefix "slider"
+        box_wrap True
 
-            xoffset 400
-            yoffset -38
+        xalign 0.6
+        yalign 0.9
 
-            vbox:
-                spacing 10
-                label _("Music")
-                label _("Sound")
-                label _("Voice")
+        xoffset 400
+        yoffset -55
 
-            
+        vbox:
+            spacing 10
+            label _("Music")
+            label _("Sound")
+            label _("Voice")
 
-            vbox:
-                spacing 35
-                yoffset 18
-                xoffset -500
+        
 
-
-                if config.has_music:
-                    
-
-                    hbox:
-                        bar value Preference("music volume")
-
-                if config.has_sound:
-
-                    
-
-                    hbox:
-                        bar value Preference("sound volume")
-
-                        if config.sample_sound:
-                            textbutton _("Test") action Play("sound", config.sample_sound)
+        vbox:
+            spacing 40
+            yoffset 22
+            xoffset -500
 
 
-                if config.has_voice:
-                    
+            if config.has_music:
+                
+                
+                bar:
+                    style "sound_bar"
+                    value Preference("music volume")
 
-                    hbox:
-                        bar value Preference("voice volume")
 
-                        if config.sample_voice:
-                            textbutton _("Test") action Play("voice", config.sample_voice)
+            if config.has_sound:
+
+                
+
+                bar:
+                    style "sound_bar"
+                    value Preference("sound volume")
+
+                    #if config.sample_sound:
+                    #    textbutton _("Test") action Play("sound", config.sample_sound)
+
+
+            if config.has_voice:
+                
+
+                bar:
+                    style "sound_bar"
+                    value Preference("voice volume")
+
+                    #if config.sample_voice:
+                    #    textbutton _("Test") action Play("voice", config.sample_voice)
 
 """
-                if config.has_music or config.has_sound or config.has_voice:
-                    null height gui.pref_spacing
+            if config.has_music or config.has_sound or config.has_voice:
+                null height gui.pref_spacing
 
-                    textbutton _("Mute All"):
-                        action Preference("all mute", "toggle")
-                        style "mute_all_button"
+                textbutton _("Mute All"):
+                    action Preference("all mute", "toggle")
+                    style "mute_all_button"
 
 """
     
@@ -198,22 +212,14 @@ screen file_slots(title):
 
         ## This ensures the input will get the enter event before any of the
         ## buttons do.
-        order_reverse True
+        #order_reverse True
 
         ## The page name, which can be edited by clicking on a button.
-        button:
-            #style "page_label"
+        text "[page_name_value.get_text()]":
+            xalign 0.2
+            yalign 0.19
+            style "page_label_text"
 
-            key_events True
-
-            yalign 0.16
-            xalign 0.13
-            
-            action page_name_value.Toggle()
-
-            input:
-                style "page_label_text"
-                value page_name_value
 
         ## The grid of file slots.
         vbox:
@@ -383,6 +389,14 @@ screen fshift_navigation_menu():
                 hover_sound "gui/gui_fshift/sfx/hover.mp3"
                 activate_sound "gui/gui_fshift/sfx/click.mp3"
 
+            imagebutton:
+                idle "gui/gui_fshift/button/side_menu/save_idle.png"
+                hover "gui/gui_fshift/button/side_menu/save_idle.png"
+                at side
+                action ShowMenu("save")
+                hover_sound "gui/gui_fshift/sfx/hover.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+
         imagebutton:
             idle "gui/gui_fshift/button/side_menu/history_idle.png"
             hover "gui/gui_fshift/button/side_menu/history_idle.png"
@@ -391,13 +405,7 @@ screen fshift_navigation_menu():
             hover_sound "gui/gui_fshift/sfx/hover.mp3"
             activate_sound "gui/gui_fshift/sfx/click.mp3"
 
-        imagebutton:
-            idle "gui/gui_fshift/button/side_menu/save_idle.png"
-            hover "gui/gui_fshift/button/side_menu/save_idle.png"
-            at side
-            action ShowMenu("save")
-            hover_sound "gui/gui_fshift/sfx/hover.mp3"
-            activate_sound "gui/gui_fshift/sfx/click.mp3"
+        
 
         imagebutton:
             idle "gui/gui_fshift/button/side_menu/load_idle.png"
