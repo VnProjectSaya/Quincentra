@@ -156,8 +156,8 @@ style say_label:
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
-    size 28
-    xpos 350
+    size 30
+    xpos 320
     ypos 40
     xsize gui.dialogue_width
 

@@ -360,7 +360,7 @@ screen fshift_navigation_menu():
 
         xalign 1.010
         yalign 0.35
-        spacing 20
+        spacing 15
         at side_enter
         # Each textbutton defines a menu option.
         # 'action' specifies what happens when the button is clicked.
@@ -372,41 +372,45 @@ screen fshift_navigation_menu():
                 hover "gui/gui_fshift/button/side_menu/start_idle.png"
                 at side
                 action Start()
+                hover_sound "gui/gui_fshift/sfx/hover.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
         else:
             imagebutton:
                 idle "gui/gui_fshift/button/side_menu/mainmenu_idle.png"
                 hover "gui/gui_fshift/button/side_menu/mainmenu_idle.png"
                 at side
                 action MainMenu(confirm=True)
+                hover_sound "gui/gui_fshift/sfx/hover.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
 
         imagebutton:
             idle "gui/gui_fshift/button/side_menu/history_idle.png"
             hover "gui/gui_fshift/button/side_menu/history_idle.png"
             at side
             action ShowMenu("history")
-
-        
+            hover_sound "gui/gui_fshift/sfx/hover.mp3"
+            activate_sound "gui/gui_fshift/sfx/click.mp3"
 
         imagebutton:
             idle "gui/gui_fshift/button/side_menu/save_idle.png"
             hover "gui/gui_fshift/button/side_menu/save_idle.png"
             at side
             action ShowMenu("save")
+            hover_sound "gui/gui_fshift/sfx/hover.mp3"
+            activate_sound "gui/gui_fshift/sfx/click.mp3"
 
         imagebutton:
             idle "gui/gui_fshift/button/side_menu/load_idle.png"
             hover "gui/gui_fshift/button/side_menu/load_idle.png"
             at side
             action ShowMenu("load")
+            hover_sound "gui/gui_fshift/sfx/hover.mp3"
+            activate_sound "gui/gui_fshift/sfx/click.mp3"
 
         imagebutton:
             idle "gui/gui_fshift/button/side_menu/options_idle.png"
             hover "gui/gui_fshift/button/side_menu/options_idle.png"
             at side
             action ShowMenu("preferences")
-
-        imagebutton:
-            idle "gui/gui_fshift/button/side_menu/quit_idle.png"
-            hover "gui/gui_fshift/button/side_menu/quit_idle.png"
-            at side
-            action Quit()
+            hover_sound "gui/gui_fshift/sfx/hover.mp3"
+            activate_sound "gui/gui_fshift/sfx/click.mp3"
