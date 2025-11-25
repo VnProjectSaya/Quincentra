@@ -11,8 +11,13 @@ init offset = -2
 init python:
     gui.init(1920, 1080)
 
+#Define default cursor
 
-
+init python:
+    config.mouse = {}
+    # Ajusta el hotspot más hacia el centro de la imagen.
+    # Por ejemplo, (32, 32) si la imagen es de 64x64 píxeles.
+    config.mouse["default"] = [("gui/gui_fshift/cursor.png", 32, 32)]
 ################################################################################
 ## GUI Configuration Variables
 ################################################################################
@@ -23,10 +28,10 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#e57dff'
+define gui.accent_color = '#ffffff'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#ffffffc9'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
@@ -55,19 +60,19 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "Xolo.ttf"
+define gui.text_font = "Xolonium-nGqP.otf"
 
 ## The font used for character names.
-define gui.name_text_font = "Audex.ttf"
+define gui.name_text_font = "Xolonium-nGqP.otf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "Audex.ttf"
+define gui.interface_text_font = "Xolonium-nGqP.otf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
 
 ## The size of character names.
-define gui.name_text_size = 48
+define gui.name_text_size = 44
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 33

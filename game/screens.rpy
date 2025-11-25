@@ -23,7 +23,7 @@ style hyperlink_text:
 
 style gui_text:
     properties gui.text_properties("interface")
-
+    
 
 style button:
     properties gui.button_properties("button")
@@ -106,9 +106,9 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                text who id "who"
+                text who id "who" 
 
-        text what id "what"
+        text what id "what" at saybox
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -136,7 +136,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/gui_fshift/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -155,10 +155,11 @@ style say_label:
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
-
-    xpos gui.dialogue_xpos
+    size 28
+    xpos 350
+    ypos 40
     xsize gui.dialogue_width
-    ypos gui.dialogue_ypos
+
 
 
 ## Input screen ################################################################
@@ -244,24 +245,45 @@ screen quick_menu():
 
     ## Ensure this appears on top of other screens.
     zorder 100
-
+    
     if quick_menu:
 
         hbox:
             style_prefix "quick"
 
-            xalign 0.93
+            xalign 0.5
             yalign 0.98
+            at side_enter
+            
+            imagebutton auto "gui/gui_fshift/quick_menu/auto_%s.png":
+                action Preference("auto-forward", "toggle")
+                hover_sound "gui/gui_fshift/sfx/quickmenu_hover.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                at hover_qm
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Options") action ShowMenu('preferences')
+            imagebutton auto "gui/gui_fshift/quick_menu/skip_%s.png":
+                action Skip() alternate Skip(fast=True, confirm=True)
+                hover_sound "gui/gui_fshift/sfx/quickmenu_hover.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                at hover_qm
 
+            imagebutton auto "gui/gui_fshift/quick_menu/save_%s.png":
+                action ShowMenu('save')
+                hover_sound "gui/gui_fshift/sfx/quickmenu_hover.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                at hover_qm
+
+            imagebutton auto "gui/gui_fshift/quick_menu/mainmenu_%s.png":
+                action MainMenu()
+                hover_sound "gui/gui_fshift/sfx/quickmenu_hover.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                at hover_qm
+
+            imagebutton auto "gui/gui_fshift/quick_menu/options_%s.png":
+                action ShowMenu('preferences')
+                hover_sound "gui/gui_fshift/sfx/quickmenu_hover.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                at hover_qm
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
@@ -1202,9 +1224,9 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
+    add "gui/overlay/confirm.png" at saybox
 
-    frame:
+    frame at confirm:
 
         vbox:
             xalign .5

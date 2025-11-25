@@ -17,4 +17,28 @@ transform side:
     on idle:
         easein 0.30 xoffset 0
 
+#QUICK MENU
 
+transform enter_bottom:
+    alpha 0.0
+    easein 0.50 alpha 1.0
+
+transform hover_qm:
+    on hover:
+        easein 0.25 yoffset -17
+    on idle:
+        easein 0.50 yoffset 0
+
+#Dialogue Box
+
+transform saybox:
+    yoffset 20
+    alpha 0
+    easein 0.41 yoffset 0 alpha 1
+
+#Confirm Box
+
+transform confirm:
+    yoffset -50
+    alpha 0
+    easein 0.37 yoffset 0 alpha 1
