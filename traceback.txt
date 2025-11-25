@@ -1,36 +1,45 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/display/render.pyx", line 487, in renpy.display.render.render_screen
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-TypeError: Value None of type <class 'NoneType'> not recognized as a position.
+  File "game/screens.rpy", line 640, in execute
+    screen save():
+  File "game/screens.rpy", line 640, in execute
+    screen save():
+  File "game/screens.rpy", line 644, in execute
+    use file_slots(_("Save"))
+  File "game/screens_fshift.rpy", line 164, in execute
+    screen file_slots(title):
+  File "game/screens_fshift.rpy", line 164, in execute
+    screen file_slots(title):
+  File "game/screens_fshift.rpy", line 184, in execute
+    fixed:
+  File "game/screens_fshift.rpy", line 241, in execute
+    hbox:
+  File "game/screens_fshift.rpy", line 268, in execute
+    imagebutton:
+  File "game/screens_fshift.rpy", line 268, in keywords
+    imagebutton:
+  File "game/screens_fshift.rpy", line 270, in keywords
+    if FileCurrentPage() != FileTotalPages():
+  File "game/screens_fshift.rpy", line 270, in <module>
+    if FileCurrentPage() != FileTotalPages():
+                            ~~~~~~~~~~~~~~^^ 
+TypeError: 'int' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
+  File "renpy/common/00gamemenu.rpy", line 174, in script
+    $ ui.interact()
   File "renpy/ast.py", line 1187, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/python.py", line 1260, in py_exec_bytecode
     exec(bytecode, globals, locals)
     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-    ~~~~~~~~~~~^^
+  File "renpy/common/00gamemenu.rpy", line 174, in <module>
+    $ ui.interact()
+      ~~~~~~~~~~~^^
   File "renpy/ui.py", line 304, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -44,58 +53,63 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )  # type: ignore
     ^                
-  File "renpy/display/core.py", line 2890, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 1380, in draw_screen
-    surftree = renpy.display.render.render_screen(
-               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        root_widget,
-        ^^^^^^^^^^^^
-        renpy.config.screen_width,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^
-        renpy.config.screen_height,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/display/render.pyx", line 487, in renpy.display.render.render_screen
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/layout.py", line 899, in render
-    surf = render(child, width, height, cst, cat)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/layout.py", line 899, in render
-    surf = render(child, width, height, cst, cat)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/layout.py", line 899, in render
-    surf = render(child, width, height, cst, cat)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/screen.py", line 767, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/layout.py", line 899, in render
-    surf = render(child, width, height, cst, cat)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/layout.py", line 1380, in render
-    xminimum, yminimum = xyminimums(style, width, height)
-                         ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/layout.py", line 52, in xyminimums
-    xminimum = compute_raw(xminimum, width)
-               ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 237, in compute_raw
-    raise TypeError("Value {} of type {} not recognized as a position.".format(value, type(value)))
-TypeError: Value None of type <class 'NoneType'> not recognized as a position.
+  File "renpy/display/core.py", line 2757, in interact_core
+    root_widget.visit_all(lambda d: d.per_interact())
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+[Previous line repeated 1 more time]
+  File "renpy/display/screen.py", line 503, in visit_all
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "renpy/display/core.py", line 2757, in <lambda>
+    root_widget.visit_all(lambda d: d.per_interact())
+                                    ~~~~~~~~~~~~~~^^ 
+  File "renpy/display/screen.py", line 514, in per_interact
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 640, in execute
+    screen save():
+  File "game/screens.rpy", line 640, in execute
+    screen save():
+  File "game/screens.rpy", line 644, in execute
+    use file_slots(_("Save"))
+  File "game/screens_fshift.rpy", line 164, in execute
+    screen file_slots(title):
+  File "game/screens_fshift.rpy", line 164, in execute
+    screen file_slots(title):
+  File "game/screens_fshift.rpy", line 184, in execute
+    fixed:
+  File "game/screens_fshift.rpy", line 241, in execute
+    hbox:
+  File "game/screens_fshift.rpy", line 268, in execute
+    imagebutton:
+  File "game/screens_fshift.rpy", line 268, in keywords
+    imagebutton:
+  File "game/screens_fshift.rpy", line 270, in keywords
+    if FileCurrentPage() != FileTotalPages():
+  File "renpy/python.py", line 1292, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1285, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/screens_fshift.rpy", line 270, in <module>
+    if FileCurrentPage() != FileTotalPages():
+                            ~~~~~~~~~~~~~~^^ 
+TypeError: 'int' object is not callable
 
 Windows-10-10.0.17763-SP0 AMD64
 Ren'Py 8.4.1.25072401
 QUINCENTRA_ENGLISH 1.0
-Mon Nov 24 19:20:09 2025
+Mon Nov 24 23:37:29 2025
