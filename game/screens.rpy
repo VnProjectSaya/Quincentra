@@ -964,7 +964,7 @@ style slider_vbox:
 ## dialogue history stored in _history_list.
 ##
 ## https://www.renpy.org/doc/html/history.html
-
+"""
 screen history():
 
     tag menu
@@ -1006,7 +1006,7 @@ screen history():
 ## This determines what tags are allowed to be displayed on the history screen.
 
 define gui.history_allow_tags = set()
-
+"""
 
 style history_window is empty
 
