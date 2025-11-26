@@ -1004,9 +1004,9 @@ screen history():
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
-
-define gui.history_allow_tags = set()
 """
+define gui.history_allow_tags = set()
+
 
 style history_window is empty
 
