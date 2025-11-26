@@ -205,13 +205,21 @@ style input:
 ## and action fields.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
+#ORIGINAL CHOICE SCREEN
 
 screen choice(items):
     style_prefix "choice"
 
     vbox:
+        style "choice_vbox"
         for i in items:
             textbutton i.caption action i.action
+
+        
+
+
+
+
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -416,24 +424,54 @@ style navigation_button_text:
 ## Used to display the main menu when Ren'Py starts.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
+#Video BG
+
+define mainmenu_bg = Movie(size=(1920,1080), play="gui/gui_fshift/main_menu.webm", loop=True)
 
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    style_prefix "main_menu"
-
-    add 'mainmenu_flicker'
-    add "gui/extra.png"
-
+    add mainmenu_bg
+    
     ## This empty frame darkens the main menu.
     frame:
-        pass
+        background None
+        xalign 0.5
+        yalign 0.8
+        hbox:
+            at mm_enter
+            spacing -30
+            xalign 0.5
+            yalign 0.5
+            imagebutton auto "gui/gui_fshift/button/mainmenu/start_%s.png":
+                action Start()
+                hover_sound "gui/gui_fshift/sfx/hover_2.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                at hover_mm
+
+            imagebutton auto "gui/gui_fshift/button/mainmenu/load_%s.png":
+                action ShowMenu("load")
+                hover_sound "gui/gui_fshift/sfx/hover_2.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                at hover_mm
+
+            imagebutton auto "gui/gui_fshift/button/mainmenu/options_%s.png":
+                action ShowMenu("preferences")
+                hover_sound "gui/gui_fshift/sfx/hover_2.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                at hover_mm
+
+            imagebutton auto "gui/gui_fshift/button/mainmenu/quit_%s.png":
+                action Quit(confirm=True)
+                hover_sound "gui/gui_fshift/sfx/hover_2.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                at hover_mm
+
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
 
     if gui.show_name:
 
@@ -481,6 +519,8 @@ style main_menu_version:
 ## The scroll parameter can be None, or one of "viewport" or "vpgrid". When
 ## this screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
+
+
 
 screen game_menu(title, scroll=None, yinitial=0.0):
 
@@ -1257,6 +1297,9 @@ screen confirm(message, yes_action, no_action):
             spacing 45
 
             text _(message):
+                size 32
+                text_align 0.5
+                yoffset 20
                 xalign 0.5
                 xmaximum 1000  # O lo que se ajuste a tu frame
                 style "confirm_prompt"
@@ -1264,14 +1307,24 @@ screen confirm(message, yes_action, no_action):
         hbox:
             xanchor 0.1
             
+            at confirm
+            xalign 0.32
+            yalign 1.38
+            spacing 0
 
-            xalign 0.5
-            yalign 1.0
-            spacing 100
+            imagebutton at l_enter:
+                idle "gui/gui_fshift/yes.png"
+                hover "gui/gui_fshift/yes.png"
+                hover_sound "gui/gui_fshift/sfx/data_click.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                action yes_action
 
-            textbutton _("Yes") action yes_action 
-            textbutton _("No") action no_action
-
+            imagebutton at r_enter:
+                idle "gui/gui_fshift/no.png"
+                hover "gui/gui_fshift/no.png"
+                hover_sound "gui/gui_fshift/sfx/data_click.mp3"
+                activate_sound "gui/gui_fshift/sfx/click.mp3"
+                action no_action
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
 

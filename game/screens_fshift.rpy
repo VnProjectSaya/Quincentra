@@ -15,6 +15,8 @@ style text_bar:
     bar_invert False
 
 
+
+
 screen preferences():
     
     tag menu
@@ -232,13 +234,15 @@ screen file_slots(title):
 
             for i in range(3):
                 vbox at confirm:
-                    spacing 8   # espacio interno entre la imagen y el texto dentro de un slot
+                    spacing 8
                     
                     $ slot = i + 1
 
                     imagebutton:
                         idle "gui/gui_fshift/save-load/slot_idle.png"
                         hover "gui/gui_fshift/save-load/slot_hover.png"
+                        hover_sound "gui/gui_fshift/sfx/data_click.mp3"
+                        activate_sound "gui/gui_fshift/sfx/click.mp3"
                         #selected_idle "gui/gui_fshift/save-load/slot_selected.png"
 
 
@@ -289,6 +293,7 @@ screen file_slots(title):
                 xoffset -300
                 yoffset -100
                 imagebutton:
+                    at zoom
                     idle "gui/gui_fshift/button/prev_page.png"
                     action FilePagePrevious(quick = False)
                 ## range(1, 10) gives the numbers from 1 to 9.
@@ -296,6 +301,7 @@ screen file_slots(title):
 
                 
                 imagebutton:
+                    at zoom
                     idle "gui/gui_fshift/button/next_page.png"
                     action FilePageNext(5, quick = False)
     
@@ -354,9 +360,11 @@ screen fshift_navigation_menu():
 
     # A frame to contain the buttons, centered on the screen.
 
-    imagebutton:
+    imagebutton at zoom:
         idle "gui/gui_fshift/button/back_idle.png"
         hover "gui/gui_fshift/button/back_hover.png"
+        hover_sound "gui/gui_fshift/sfx/hover.mp3"
+        activate_sound "gui/gui_fshift/sfx/click.mp3"
         xalign 0.86
         yalign 0.97
         action Return()
@@ -423,3 +431,5 @@ screen fshift_navigation_menu():
             action ShowMenu("preferences")
             hover_sound "gui/gui_fshift/sfx/hover.mp3"
             activate_sound "gui/gui_fshift/sfx/click.mp3"
+
+

@@ -49,6 +49,11 @@ label start:
     with fade
 
     "The rain fell hard, painting the empty streets with reflections of flickering neon signs."
+    menu:
+        "Syntia's gaze lingered on Nexor, searching for any sign of hope.":
+            "Syntia's gaze lingered on Nexor, searching for any sign of hope."
+        "Look at the rain":
+            "She turned her eyes to the rain, letting its rhythm steady her thoughts."
 
     "Syntia knelt beside Nexor, her fingers intertwining with the cold, broken remains of his mechanical hand."
 

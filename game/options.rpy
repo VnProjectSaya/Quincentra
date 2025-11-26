@@ -72,7 +72,7 @@ define config.has_voice = True
 
 ## Entering or exiting the game menu.
 
-define config.enter_transition = None       
+define config.enter_transition = None    
 define config.exit_transition = None
 
 

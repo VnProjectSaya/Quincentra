@@ -142,10 +142,14 @@ screen choice(items, time=None, timeout=None):
             timer 0.01 action Jump(timeout)
 
     # Show the list of choices.
-    vbox:
+    vbox at choice_enter:
+        spacing -10
         # The choices.
         for i in items:
-            textbutton i.caption action i.action
+            textbutton i.caption action i.action:
+                at choice_hover
+                hover_sound "gui/gui_fshift/sfx/hover.mp3"
+                activate_sound "gui/gui_fshift/sfx/choice_click.mp3"
 
         # Add an equivalent button to timing out if timed choices are disabled.
         if timed_choice and not persistent.timed_choice_enabled and gui.timed_choice_timeout_alt_msg:
