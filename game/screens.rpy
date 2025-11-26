@@ -1242,8 +1242,8 @@ screen confirm(message, yes_action, no_action):
 
         
 
-        xanchor 0.5
-        yanchor 0.5
+        xanchor 0.55
+        yanchor 0.6
 
         xalign .5 
         yalign .5 
@@ -1261,12 +1261,16 @@ screen confirm(message, yes_action, no_action):
                 xmaximum 1000  # O lo que se ajuste a tu frame
                 style "confirm_prompt"
 
-            hbox:
-                xalign 0.5
-                spacing 150
+        hbox:
+            xanchor 0.1
+            
 
-                textbutton _("Yes") action yes_action 
-                textbutton _("No") action no_action
+            xalign 0.5
+            yalign 1.0
+            spacing 100
+
+            textbutton _("Yes") action yes_action 
+            textbutton _("No") action no_action
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
