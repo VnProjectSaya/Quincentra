@@ -231,7 +231,7 @@ screen file_slots(title):
             spacing -80
 
             for i in range(3):
-                vbox:
+                vbox at confirm:
                     spacing 8   # espacio interno entre la imagen y el texto dentro de un slot
                     
                     $ slot = i + 1
@@ -323,6 +323,7 @@ screen save_preview():
                     
 screen details_preview():                
     vbox:
+        at side_enter
         xpos 1100
         ypos 400
 
