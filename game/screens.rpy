@@ -1227,21 +1227,39 @@ screen confirm(message, yes_action, no_action):
 
     zorder 200
 
-    style_prefix "confirm"
+    #style_prefix "confirm"
 
-    add "gui/overlay/confirm.png" at saybox
+    add "gui/overlay/confirm.png"
+    
+    
 
     frame at confirm:
 
+        background "gui/gui_fshift/confirm.png"
+        xsize 1100
+        ysize 550
+        padding (50, 50)
+
+        
+
+        xanchor 0.5
+        yanchor 0.5
+
+        xalign .5 
+        yalign .5 
+
         vbox:
-            xalign .5
-            yalign .5
+            xoffset 160
+            yoffset 200
+            
+            xmaximum 900
+
             spacing 45
 
-            label _(message):
-                style "confirm_prompt"
+            text _(message):
                 xalign 0.5
-                at saybox
+                xmaximum 1000  # O lo que se ajuste a tu frame
+                style "confirm_prompt"
 
             hbox:
                 xalign 0.5
