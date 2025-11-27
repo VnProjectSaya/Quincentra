@@ -318,9 +318,12 @@ screen save_preview():
 
     frame:
         xpos 1050
-        ypos 400
+        ypos 400    
 
         background None
+
+        add "gui/gui_fshift/save-load/preview_empty.png"
+
         if persistent._preview_slot == None:
             add "gui/gui_fshift/save-load/preview_empty.png" 
         else:
